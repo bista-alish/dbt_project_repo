@@ -1,6 +1,6 @@
 version: 2
 seeds:
-  - name: dropoff_locations
+  - name:  dropoff_locations
     config:
       column_types:
         id: integer

@@ -1,0 +1,14 @@
+version:  2
+
+models:
+  - name: mart_customers
+    description: Customer data with details
+    columns:
+      - name: user_id
+        description: Unique identifier for the customer
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('stg__customers')
+              field: customer_id

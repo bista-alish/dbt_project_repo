@@ -1,0 +1,133 @@
+version: 2
+
+models:
+  - name: stg__customers
+    description: Customer data with details
+    columns:
+      - name: customer_id
+        description: Unique identifier for the customer
+        data_tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: First name of the customer
+        data_tests:
+          - not_null
+      - name: last_name
+        description: Last name of the customer
+        data_tests:
+          - not_null
+
+  - name: stg__dropoff_locations
+    description: Dropoff location with coordinates
+    columns:
+      - name: id
+        description: Unique identifier for the dropoff location
+        data_tests:
+          - unique
+          - not_null
+      - name: name
+        description: Name of the dropoff location
+        data_tests:
+          - not_null
+      - name: latitude
+        description: Latitude coordinate of the dropoff location
+        data_tests:
+          - not_null
+      - name: longitude
+        description: Longitude coordinate of the dropoff location
+        data_tests:
+          - not_null
+
+  - name: stg__orders
+    description: Order information including customer, payment and dropoff location details
+    columns:
+      - name: order_id
+        description: Unique identifier for the order
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: Identifier for the customer who placed the order
+        data_tests:
+          - not_null
+      - name: order_date
+        description: Date when the order was placed
+        data_tests:
+          - not_null
+      - name: total_amount
+        description: Total amount of the order
+        data_tests:
+          - not_null
+  
+  - name: stg__order_items
+    description: Order information on item level
+    columns:
+      - name: order_item_id
+        description: Unique identifier for the order item
+        data_tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: Identifier for the order this item belongs to
+        data_tests:
+          - not_null
+      - name: product_id
+        description: Identifier for the product in this order item
+        data_tests:
+          - not_null
+      - name: quantity
+        description: Quantity of the product ordered
+        data_tests:
+          - not_null
+      - name: unit_price
+        description: Price per unit of the product
+        data_tests:
+          - not_null
+
+  - name: stg__payments
+    description: Payment details for orders
+    columns:
+      - name: payment_id
+        description: Unique identifier for the payment
+        data_tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: Identifier for the order this payment is associated with
+        data_tests:
+          - not_null
+      - name: payment_method
+        description: Method used for the payment (e.g., credit card, PayPal)
+        data_tests:
+          - not_null
+      - name: amount
+        description: Amount paid in the transaction
+        data_tests:
+          - not_null
+      - name: payment_date
+        description: Date when the payment was made
+        data_tests:
+          - not_null
+  
+  - name: stg__products
+    description: Product catalog with details
+    columns:
+      - name: product_id
+        description: Unique identifier for the product
+        data_tests:
+          - unique
+          - not_null
+      - name: name
+        description: Name of the product
+        data_tests:
+          - not_null
+      - name: description
+        description: Description of the product
+      - name: price
+        description: Price of the product
+        data_tests:
+          - not_null
+      - name: category_id
+        description: Identifier for the category this product belongs to
+        
