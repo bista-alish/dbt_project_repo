@@ -1,0 +1,7 @@
+ecommerce:
+  outputs:
+    dev:
+      type: duckdb
+      path: './nepal_ecommerce.duckdb'
+      schema: main
+  target: dev

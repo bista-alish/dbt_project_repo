@@ -1,5 +1,20 @@
 version: 2
 
 models:
+  - name: stg__customers
+    description: Customer data with details
+
   - name: stg__dropoff_locations
-    description: "Stage for dropoff locations"
+    description: Dropoff location with coordinates
+
+  - name: stg__orders
+    description: Order information including customer, payment and dropoff location details
+  
+  - name: stg__order_items
+    description: Order information on item level
+
+  - name: stg__payments
+    description: Payment details for orders
+  
+  - name: stg__products
+    description: Product catalog with details
