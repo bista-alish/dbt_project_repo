@@ -1,10 +1,10 @@
 version:  2
 
 models:
-  - name: mart_customers
-    description: Customer data with details
+  - name: dim_customers
+    description: Dimension table for customer details
     columns:
-      - name: user_id
+      - name: customer_key
         description: Unique identifier for the customer
         data_tests:
           - unique
