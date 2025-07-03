@@ -1,2 +1,2 @@
-# practice_dbt
-Repo for holding tests for dbt
+# dbt Project Repo - Ecommerce
+dbt transformation logic for a sample ecommerce site
